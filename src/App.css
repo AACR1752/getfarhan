@@ -1,3 +1,27 @@
+
+.switch-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Adds space between the icon and the text */
+  padding: 10px 24px;
+  
+  border: 2px solid #5c7c99; 
+  border-radius: 8px;
+  background-color: transparent;
+  color: #64b5f6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.switch-logo img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -180,11 +204,84 @@
   }
 }
 
-#spacer {
-  height: 88px;
+#bulletin {
+  padding: 32px 0;
   border-top: 1px solid var(--border);
   @media (max-width: 1024px) {
-    height: 48px;
+    padding: 24px 20px;
+  }
+}
+
+.bulletin-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bulletin-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  animation: bulletin-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes bulletin-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.bulletin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.bulletin-item {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px dashed var(--border);
+  text-align: left;
+  font-size: 0.95rem;
+
+  &::before {
+    content: '\25B8';
+    position: absolute;
+    left: 0;
+    color: #d32f2f;
+    font-weight: bold;
+  }
+
+  &:first-child {
+    font-weight: 700;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.creditor-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 12px auto;
+  padding: 16px 24px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+
+  p {
+    margin: 0;
   }
 }
 
